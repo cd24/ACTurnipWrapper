@@ -1,0 +1,676 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5208F0302446E1690032FB76 /* StalkMarketWizard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208F02F2446E1680032FB76 /* StalkMarketWizard.swift */; };
+		5208F0322448210A0032FB76 /* StalkNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208F0312448210A0032FB76 /* StalkNetwork.swift */; };
+		5250F0F22446958A00E5B2AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250F0F12446958A00E5B2AA /* AppDelegate.swift */; };
+		5250F0F42446958A00E5B2AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250F0F32446958A00E5B2AA /* SceneDelegate.swift */; };
+		5250F0F72446958A00E5B2AA /* AC_Stalk_Market.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5250F0F52446958A00E5B2AA /* AC_Stalk_Market.xcdatamodeld */; };
+		5250F0FB2446958D00E5B2AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5250F0FA2446958D00E5B2AA /* Assets.xcassets */; };
+		5250F0FE2446958D00E5B2AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5250F0FD2446958D00E5B2AA /* Preview Assets.xcassets */; };
+		5250F1012446958D00E5B2AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5250F0FF2446958D00E5B2AA /* LaunchScreen.storyboard */; };
+		5250F10C2446958D00E5B2AA /* AC_Stalk_MarketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250F10B2446958D00E5B2AA /* AC_Stalk_MarketTests.swift */; };
+		5250F1172446958D00E5B2AA /* AC_Stalk_MarketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250F1162446958D00E5B2AA /* AC_Stalk_MarketUITests.swift */; };
+		5250F129244695B400E5B2AA /* SwiftUIPreviews+PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250F125244695B400E5B2AA /* SwiftUIPreviews+PreviewData.swift */; };
+		5250F12A244695B400E5B2AA /* TurnipPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250F126244695B400E5B2AA /* TurnipPriceCell.swift */; };
+		5250F12B244695B400E5B2AA /* PriceHistoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250F127244695B400E5B2AA /* PriceHistoryList.swift */; };
+		5250F12C244695B400E5B2AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250F128244695B400E5B2AA /* ContentView.swift */; };
+		5250F12E2446965E00E5B2AA /* TurnipPriceAdder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250F12D2446965E00E5B2AA /* TurnipPriceAdder.swift */; };
+		5250F13024469A5900E5B2AA /* Price+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250F12F24469A5900E5B2AA /* Price+Helpers.swift */; };
+		5250F13224469B6A00E5B2AA /* ShouldSellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250F13124469B6A00E5B2AA /* ShouldSellView.swift */; };
+		5250F13424469D9F00E5B2AA /* TurnipPredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250F13324469D9F00E5B2AA /* TurnipPredictor.swift */; };
+		5250F1372446C94800E5B2AA /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250F1362446C94800E5B2AA /* CoreDataHelper.swift */; };
+		5250F13A2446CEF500E5B2AA /* DayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250F1392446CEF500E5B2AA /* DayModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5250F1082446958D00E5B2AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5250F0E62446958900E5B2AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5250F0ED2446958900E5B2AA;
+			remoteInfo = "AC Stalk Market";
+		};
+		5250F1132446958D00E5B2AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5250F0E62446958900E5B2AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5250F0ED2446958900E5B2AA;
+			remoteInfo = "AC Stalk Market";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5208F02F2446E1680032FB76 /* StalkMarketWizard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StalkMarketWizard.swift; sourceTree = "<group>"; };
+		5208F0312448210A0032FB76 /* StalkNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StalkNetwork.swift; sourceTree = "<group>"; };
+		5250F0EE2446958900E5B2AA /* AC Stalk Market.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AC Stalk Market.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5250F0F12446958A00E5B2AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5250F0F32446958A00E5B2AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5250F0F62446958A00E5B2AA /* AC_Stalk_Market.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AC_Stalk_Market.xcdatamodel; sourceTree = "<group>"; };
+		5250F0FA2446958D00E5B2AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5250F0FD2446958D00E5B2AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5250F1002446958D00E5B2AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5250F1022446958D00E5B2AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5250F1072446958D00E5B2AA /* AC Stalk MarketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AC Stalk MarketTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5250F10B2446958D00E5B2AA /* AC_Stalk_MarketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AC_Stalk_MarketTests.swift; sourceTree = "<group>"; };
+		5250F10D2446958D00E5B2AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5250F1122446958D00E5B2AA /* AC Stalk MarketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AC Stalk MarketUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5250F1162446958D00E5B2AA /* AC_Stalk_MarketUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AC_Stalk_MarketUITests.swift; sourceTree = "<group>"; };
+		5250F1182446958D00E5B2AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5250F125244695B400E5B2AA /* SwiftUIPreviews+PreviewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwiftUIPreviews+PreviewData.swift"; sourceTree = "<group>"; };
+		5250F126244695B400E5B2AA /* TurnipPriceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurnipPriceCell.swift; sourceTree = "<group>"; };
+		5250F127244695B400E5B2AA /* PriceHistoryList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceHistoryList.swift; sourceTree = "<group>"; };
+		5250F128244695B400E5B2AA /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5250F12D2446965E00E5B2AA /* TurnipPriceAdder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipPriceAdder.swift; sourceTree = "<group>"; };
+		5250F12F24469A5900E5B2AA /* Price+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Price+Helpers.swift"; sourceTree = "<group>"; };
+		5250F13124469B6A00E5B2AA /* ShouldSellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShouldSellView.swift; sourceTree = "<group>"; };
+		5250F13324469D9F00E5B2AA /* TurnipPredictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipPredictor.swift; sourceTree = "<group>"; };
+		5250F1352446C5D800E5B2AA /* AC Stalk Market.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "AC Stalk Market.entitlements"; sourceTree = "<group>"; };
+		5250F1362446C94800E5B2AA /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		5250F1392446CEF500E5B2AA /* DayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5250F0EB2446958900E5B2AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5250F1042446958D00E5B2AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5250F10F2446958D00E5B2AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5250F0E52446958900E5B2AA = {
+			isa = PBXGroup;
+			children = (
+				5250F0F02446958900E5B2AA /* AC Stalk Market */,
+				5250F10A2446958D00E5B2AA /* AC Stalk MarketTests */,
+				5250F1152446958D00E5B2AA /* AC Stalk MarketUITests */,
+				5250F0EF2446958900E5B2AA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5250F0EF2446958900E5B2AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5250F0EE2446958900E5B2AA /* AC Stalk Market.app */,
+				5250F1072446958D00E5B2AA /* AC Stalk MarketTests.xctest */,
+				5250F1122446958D00E5B2AA /* AC Stalk MarketUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5250F0F02446958900E5B2AA /* AC Stalk Market */ = {
+			isa = PBXGroup;
+			children = (
+				5250F1382446CDF400E5B2AA /* Web Hook */,
+				5250F1352446C5D800E5B2AA /* AC Stalk Market.entitlements */,
+				5250F12F24469A5900E5B2AA /* Price+Helpers.swift */,
+				5250F124244695B400E5B2AA /* Views */,
+				5250F0F12446958A00E5B2AA /* AppDelegate.swift */,
+				5250F0F32446958A00E5B2AA /* SceneDelegate.swift */,
+				5250F0FA2446958D00E5B2AA /* Assets.xcassets */,
+				5250F0FF2446958D00E5B2AA /* LaunchScreen.storyboard */,
+				5250F1022446958D00E5B2AA /* Info.plist */,
+				5250F0F52446958A00E5B2AA /* AC_Stalk_Market.xcdatamodeld */,
+				5250F0FC2446958D00E5B2AA /* Preview Content */,
+				5250F13324469D9F00E5B2AA /* TurnipPredictor.swift */,
+				5250F1362446C94800E5B2AA /* CoreDataHelper.swift */,
+			);
+			path = "AC Stalk Market";
+			sourceTree = "<group>";
+		};
+		5250F0FC2446958D00E5B2AA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				5250F0FD2446958D00E5B2AA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5250F10A2446958D00E5B2AA /* AC Stalk MarketTests */ = {
+			isa = PBXGroup;
+			children = (
+				5250F10B2446958D00E5B2AA /* AC_Stalk_MarketTests.swift */,
+				5250F10D2446958D00E5B2AA /* Info.plist */,
+			);
+			path = "AC Stalk MarketTests";
+			sourceTree = "<group>";
+		};
+		5250F1152446958D00E5B2AA /* AC Stalk MarketUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5250F1162446958D00E5B2AA /* AC_Stalk_MarketUITests.swift */,
+				5250F1182446958D00E5B2AA /* Info.plist */,
+			);
+			path = "AC Stalk MarketUITests";
+			sourceTree = "<group>";
+		};
+		5250F124244695B400E5B2AA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5250F125244695B400E5B2AA /* SwiftUIPreviews+PreviewData.swift */,
+				5250F126244695B400E5B2AA /* TurnipPriceCell.swift */,
+				5250F127244695B400E5B2AA /* PriceHistoryList.swift */,
+				5250F12D2446965E00E5B2AA /* TurnipPriceAdder.swift */,
+				5250F128244695B400E5B2AA /* ContentView.swift */,
+				5250F13124469B6A00E5B2AA /* ShouldSellView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5250F1382446CDF400E5B2AA /* Web Hook */ = {
+			isa = PBXGroup;
+			children = (
+				5250F1392446CEF500E5B2AA /* DayModel.swift */,
+				5208F02F2446E1680032FB76 /* StalkMarketWizard.swift */,
+				5208F0312448210A0032FB76 /* StalkNetwork.swift */,
+			);
+			path = "Web Hook";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5250F0ED2446958900E5B2AA /* AC Stalk Market */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5250F11B2446958D00E5B2AA /* Build configuration list for PBXNativeTarget "AC Stalk Market" */;
+			buildPhases = (
+				5250F0EA2446958900E5B2AA /* Sources */,
+				5250F0EB2446958900E5B2AA /* Frameworks */,
+				5250F0EC2446958900E5B2AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AC Stalk Market";
+			productName = "AC Stalk Market";
+			productReference = 5250F0EE2446958900E5B2AA /* AC Stalk Market.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5250F1062446958D00E5B2AA /* AC Stalk MarketTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5250F11E2446958D00E5B2AA /* Build configuration list for PBXNativeTarget "AC Stalk MarketTests" */;
+			buildPhases = (
+				5250F1032446958D00E5B2AA /* Sources */,
+				5250F1042446958D00E5B2AA /* Frameworks */,
+				5250F1052446958D00E5B2AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5250F1092446958D00E5B2AA /* PBXTargetDependency */,
+			);
+			name = "AC Stalk MarketTests";
+			productName = "AC Stalk MarketTests";
+			productReference = 5250F1072446958D00E5B2AA /* AC Stalk MarketTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5250F1112446958D00E5B2AA /* AC Stalk MarketUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5250F1212446958D00E5B2AA /* Build configuration list for PBXNativeTarget "AC Stalk MarketUITests" */;
+			buildPhases = (
+				5250F10E2446958D00E5B2AA /* Sources */,
+				5250F10F2446958D00E5B2AA /* Frameworks */,
+				5250F1102446958D00E5B2AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5250F1142446958D00E5B2AA /* PBXTargetDependency */,
+			);
+			name = "AC Stalk MarketUITests";
+			productName = "AC Stalk MarketUITests";
+			productReference = 5250F1122446958D00E5B2AA /* AC Stalk MarketUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5250F0E62446958900E5B2AA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "John McAvey";
+				TargetAttributes = {
+					5250F0ED2446958900E5B2AA = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					5250F1062446958D00E5B2AA = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 5250F0ED2446958900E5B2AA;
+					};
+					5250F1112446958D00E5B2AA = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 5250F0ED2446958900E5B2AA;
+					};
+				};
+			};
+			buildConfigurationList = 5250F0E92446958900E5B2AA /* Build configuration list for PBXProject "AC Stalk Market" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5250F0E52446958900E5B2AA;
+			productRefGroup = 5250F0EF2446958900E5B2AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5250F0ED2446958900E5B2AA /* AC Stalk Market */,
+				5250F1062446958D00E5B2AA /* AC Stalk MarketTests */,
+				5250F1112446958D00E5B2AA /* AC Stalk MarketUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5250F0EC2446958900E5B2AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5250F1012446958D00E5B2AA /* LaunchScreen.storyboard in Resources */,
+				5250F0FE2446958D00E5B2AA /* Preview Assets.xcassets in Resources */,
+				5250F0FB2446958D00E5B2AA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5250F1052446958D00E5B2AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5250F1102446958D00E5B2AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5250F0EA2446958900E5B2AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5250F13424469D9F00E5B2AA /* TurnipPredictor.swift in Sources */,
+				5250F13A2446CEF500E5B2AA /* DayModel.swift in Sources */,
+				5250F0F22446958A00E5B2AA /* AppDelegate.swift in Sources */,
+				5250F12A244695B400E5B2AA /* TurnipPriceCell.swift in Sources */,
+				5250F12C244695B400E5B2AA /* ContentView.swift in Sources */,
+				5250F129244695B400E5B2AA /* SwiftUIPreviews+PreviewData.swift in Sources */,
+				5208F0302446E1690032FB76 /* StalkMarketWizard.swift in Sources */,
+				5250F12B244695B400E5B2AA /* PriceHistoryList.swift in Sources */,
+				5250F1372446C94800E5B2AA /* CoreDataHelper.swift in Sources */,
+				5250F13024469A5900E5B2AA /* Price+Helpers.swift in Sources */,
+				5208F0322448210A0032FB76 /* StalkNetwork.swift in Sources */,
+				5250F0F72446958A00E5B2AA /* AC_Stalk_Market.xcdatamodeld in Sources */,
+				5250F13224469B6A00E5B2AA /* ShouldSellView.swift in Sources */,
+				5250F12E2446965E00E5B2AA /* TurnipPriceAdder.swift in Sources */,
+				5250F0F42446958A00E5B2AA /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5250F1032446958D00E5B2AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5250F10C2446958D00E5B2AA /* AC_Stalk_MarketTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5250F10E2446958D00E5B2AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5250F1172446958D00E5B2AA /* AC_Stalk_MarketUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5250F1092446958D00E5B2AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5250F0ED2446958900E5B2AA /* AC Stalk Market */;
+			targetProxy = 5250F1082446958D00E5B2AA /* PBXContainerItemProxy */;
+		};
+		5250F1142446958D00E5B2AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5250F0ED2446958900E5B2AA /* AC Stalk Market */;
+			targetProxy = 5250F1132446958D00E5B2AA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5250F0FF2446958D00E5B2AA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5250F1002446958D00E5B2AA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5250F1192446958D00E5B2AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5250F11A2446958D00E5B2AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5250F11C2446958D00E5B2AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "AC Stalk Market/AC Stalk Market.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"AC Stalk Market/Preview Content\"";
+				DEVELOPMENT_TEAM = 6VKP38H23M;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "AC Stalk Market/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mcavey.john.AC-Stalk-Market";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5250F11D2446958D00E5B2AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "AC Stalk Market/AC Stalk Market.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"AC Stalk Market/Preview Content\"";
+				DEVELOPMENT_TEAM = 6VKP38H23M;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "AC Stalk Market/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mcavey.john.AC-Stalk-Market";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5250F11F2446958D00E5B2AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "AC Stalk MarketTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.john.AC-Stalk-MarketTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AC Stalk Market.app/AC Stalk Market";
+			};
+			name = Debug;
+		};
+		5250F1202446958D00E5B2AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "AC Stalk MarketTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.john.AC-Stalk-MarketTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AC Stalk Market.app/AC Stalk Market";
+			};
+			name = Release;
+		};
+		5250F1222446958D00E5B2AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "AC Stalk MarketUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.john.AC-Stalk-MarketUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "AC Stalk Market";
+			};
+			name = Debug;
+		};
+		5250F1232446958D00E5B2AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "AC Stalk MarketUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.john.AC-Stalk-MarketUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "AC Stalk Market";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5250F0E92446958900E5B2AA /* Build configuration list for PBXProject "AC Stalk Market" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5250F1192446958D00E5B2AA /* Debug */,
+				5250F11A2446958D00E5B2AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5250F11B2446958D00E5B2AA /* Build configuration list for PBXNativeTarget "AC Stalk Market" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5250F11C2446958D00E5B2AA /* Debug */,
+				5250F11D2446958D00E5B2AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5250F11E2446958D00E5B2AA /* Build configuration list for PBXNativeTarget "AC Stalk MarketTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5250F11F2446958D00E5B2AA /* Debug */,
+				5250F1202446958D00E5B2AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5250F1212446958D00E5B2AA /* Build configuration list for PBXNativeTarget "AC Stalk MarketUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5250F1222446958D00E5B2AA /* Debug */,
+				5250F1232446958D00E5B2AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5250F0F52446958A00E5B2AA /* AC_Stalk_Market.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5250F0F62446958A00E5B2AA /* AC_Stalk_Market.xcdatamodel */,
+			);
+			currentVersion = 5250F0F62446958A00E5B2AA /* AC_Stalk_Market.xcdatamodel */;
+			path = AC_Stalk_Market.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5250F0E62446958900E5B2AA /* Project object */;
+}
