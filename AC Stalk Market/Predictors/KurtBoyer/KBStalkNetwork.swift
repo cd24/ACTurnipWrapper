@@ -1,5 +1,5 @@
 //
-//  StalkNetwork.swift
+//  KBStalkNetwork.swift
 //  AC Stalk Market
 //
 //  Created by John McAvey on 4/15/20.
@@ -11,11 +11,8 @@ import Foundation
 import WebKit
 import SwiftUI
 
-public struct StalkNetwork: StalkMarketWizardNetworkInterface {
+public struct KBStalkNetwork: StalkMarketWizardNetworkInterface {
     var marketURL: URL = URL(string: "https://kurtboyer.com/stalkmarket/")!
-    
-    init() {
-    }
     
     public func prediction(from week: WeekModel?) -> AnyPublisher<String, Error> {
         let web: ACSWebViewMessenger = ACSWebViewMessenger()
@@ -31,6 +28,16 @@ public struct StalkNetwork: StalkMarketWizardNetworkInterface {
             .flatMap { recommendation in loader.latest.filter { $0 == .finished }.map { _ in recommendation }.normalizeError() }
             .flatMap { recommendationPage in recommendationPage.recommendation() }
             .eraseToAnyPublisher()
+    }
+}
+
+public struct KBNetworkParser: StalkMarketWizardParser {
+    public func parse(from content: String) -> TurnipPrediction<Error> {
+        if content.lowercased().contains("sell") {
+            return .sell
+        } else {
+            return .hold
+        }
     }
 }
 

@@ -17,8 +17,7 @@ public struct PriceHistoryList: View {
     var entries: FetchedResults<TurnipPrice>
     
     public var body: some View {
-        printAll()
-        return List() {
+        List() {
             ForEach(entries.filter { $0.date?.dayOfWeek != .sunday }, id: \.date) { price in
                 TurnipPriceCell(price: price)
             }.onDelete { indexes in
@@ -31,13 +30,6 @@ public struct PriceHistoryList: View {
         for index in indexes {
             let element = self.entries[index]
             self.context.delete(element)
-        }
-    }
-    
-    func printAll() {
-        let elements = try! context.fetch(TurnipPrice.sortedFetch)
-        for element in elements {
-            print(element)
         }
     }
 }

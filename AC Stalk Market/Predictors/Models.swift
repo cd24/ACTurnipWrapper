@@ -60,3 +60,24 @@ public func newestWeek(from days: [DayModel]) -> WeekModel? {
                      saturday: releventDays.first(.saturday),
                      sunday: releventDays.first(.sunday))
 }
+
+extension WeekModel {
+    func dayModel(for day: DayOfWeek) -> DayModel? {
+        switch day {
+        case .monday:
+            return self.monday
+        case .tuesday:
+            return self.tuesday
+        case .wednesday:
+            return self.wednesday
+        case .thursday:
+            return self.thursday
+        case .friday:
+            return self.friday
+        case .saturday:
+            return self.saturday
+        case .sunday:
+            return self.sunday
+        }
+    }
+}

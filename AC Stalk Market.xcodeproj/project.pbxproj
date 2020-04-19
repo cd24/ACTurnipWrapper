@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5208F0302446E1690032FB76 /* StalkMarketWizard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208F02F2446E1680032FB76 /* StalkMarketWizard.swift */; };
-		5208F0322448210A0032FB76 /* StalkNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208F0312448210A0032FB76 /* StalkNetwork.swift */; };
+		5208F0322448210A0032FB76 /* KBStalkNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208F0312448210A0032FB76 /* KBStalkNetwork.swift */; };
 		5241A77D244CFC7500218147 /* FlatMap+FowardBind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241A77C244CFC7500218147 /* FlatMap+FowardBind.swift */; };
 		5241A77F244CFC9000218147 /* FunctionalBasics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241A77E244CFC9000218147 /* FunctionalBasics.swift */; };
 		5241A782244CFCB600218147 /* JavascriptExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241A781244CFCB600218147 /* JavascriptExpression.swift */; };
@@ -18,6 +18,13 @@
 		5241A78A244CFEB800218147 /* ACSWebViewMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241A789244CFEB800218147 /* ACSWebViewMessenger.swift */; };
 		5241A78C244CFF0300218147 /* Publisher+ErrorManipulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241A78B244CFF0300218147 /* Publisher+ErrorManipulation.swift */; };
 		5241A78E244CFF1C00218147 /* WKWebViewLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241A78D244CFF1C00218147 /* WKWebViewLoader.swift */; };
+		5241A792244D002D00218147 /* StateViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241A791244D002D00218147 /* StateViews.swift */; };
+		5241A794244D004D00218147 /* TurnipUIEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241A793244D004D00218147 /* TurnipUIEntry.swift */; };
+		5241A796244D007100218147 /* FetchWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241A795244D007100218147 /* FetchWrapper.swift */; };
+		5241A799244D009E00218147 /* PredictionWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241A798244D009E00218147 /* PredictionWrapper.swift */; };
+		5241A79B244D00BF00218147 /* TurnipPriceNow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241A79A244D00BF00218147 /* TurnipPriceNow.swift */; };
+		5241A79D244D010100218147 /* BellIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241A79C244D010100218147 /* BellIcon.swift */; };
+		5241A7A1244D015800218147 /* StaticPredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241A7A0244D015800218147 /* StaticPredictor.swift */; };
 		5250F0F22446958A00E5B2AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250F0F12446958A00E5B2AA /* AppDelegate.swift */; };
 		5250F0F42446958A00E5B2AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250F0F32446958A00E5B2AA /* SceneDelegate.swift */; };
 		5250F0F72446958A00E5B2AA /* AC_Stalk_Market.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5250F0F52446958A00E5B2AA /* AC_Stalk_Market.xcdatamodeld */; };
@@ -32,10 +39,10 @@
 		5250F12C244695B400E5B2AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250F128244695B400E5B2AA /* ContentView.swift */; };
 		5250F12E2446965E00E5B2AA /* TurnipPriceAdder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250F12D2446965E00E5B2AA /* TurnipPriceAdder.swift */; };
 		5250F13024469A5900E5B2AA /* Price+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250F12F24469A5900E5B2AA /* Price+Helpers.swift */; };
-		5250F13224469B6A00E5B2AA /* ShouldSellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250F13124469B6A00E5B2AA /* ShouldSellView.swift */; };
+		5250F13224469B6A00E5B2AA /* PredictionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250F13124469B6A00E5B2AA /* PredictionPresenter.swift */; };
 		5250F13424469D9F00E5B2AA /* TurnipPredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250F13324469D9F00E5B2AA /* TurnipPredictor.swift */; };
 		5250F1372446C94800E5B2AA /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250F1362446C94800E5B2AA /* CoreDataHelper.swift */; };
-		5250F13A2446CEF500E5B2AA /* DayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250F1392446CEF500E5B2AA /* DayModel.swift */; };
+		5250F13A2446CEF500E5B2AA /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250F1392446CEF500E5B2AA /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +64,7 @@
 
 /* Begin PBXFileReference section */
 		5208F02F2446E1680032FB76 /* StalkMarketWizard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StalkMarketWizard.swift; sourceTree = "<group>"; };
-		5208F0312448210A0032FB76 /* StalkNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StalkNetwork.swift; sourceTree = "<group>"; };
+		5208F0312448210A0032FB76 /* KBStalkNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBStalkNetwork.swift; sourceTree = "<group>"; };
 		5241A77C244CFC7500218147 /* FlatMap+FowardBind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlatMap+FowardBind.swift"; sourceTree = "<group>"; };
 		5241A77E244CFC9000218147 /* FunctionalBasics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalBasics.swift; sourceTree = "<group>"; };
 		5241A781244CFCB600218147 /* JavascriptExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavascriptExpression.swift; sourceTree = "<group>"; };
@@ -67,6 +74,13 @@
 		5241A789244CFEB800218147 /* ACSWebViewMessenger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACSWebViewMessenger.swift; sourceTree = "<group>"; };
 		5241A78B244CFF0300218147 /* Publisher+ErrorManipulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+ErrorManipulation.swift"; sourceTree = "<group>"; };
 		5241A78D244CFF1C00218147 /* WKWebViewLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewLoader.swift; sourceTree = "<group>"; };
+		5241A791244D002D00218147 /* StateViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateViews.swift; sourceTree = "<group>"; };
+		5241A793244D004D00218147 /* TurnipUIEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipUIEntry.swift; sourceTree = "<group>"; };
+		5241A795244D007100218147 /* FetchWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchWrapper.swift; sourceTree = "<group>"; };
+		5241A798244D009E00218147 /* PredictionWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionWrapper.swift; sourceTree = "<group>"; };
+		5241A79A244D00BF00218147 /* TurnipPriceNow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipPriceNow.swift; sourceTree = "<group>"; };
+		5241A79C244D010100218147 /* BellIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BellIcon.swift; sourceTree = "<group>"; };
+		5241A7A0244D015800218147 /* StaticPredictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticPredictor.swift; sourceTree = "<group>"; };
 		5250F0EE2446958900E5B2AA /* AC Stalk Market.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AC Stalk Market.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5250F0F12446958A00E5B2AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5250F0F32446958A00E5B2AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,11 +101,11 @@
 		5250F128244695B400E5B2AA /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5250F12D2446965E00E5B2AA /* TurnipPriceAdder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipPriceAdder.swift; sourceTree = "<group>"; };
 		5250F12F24469A5900E5B2AA /* Price+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Price+Helpers.swift"; sourceTree = "<group>"; };
-		5250F13124469B6A00E5B2AA /* ShouldSellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShouldSellView.swift; sourceTree = "<group>"; };
+		5250F13124469B6A00E5B2AA /* PredictionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionPresenter.swift; sourceTree = "<group>"; };
 		5250F13324469D9F00E5B2AA /* TurnipPredictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipPredictor.swift; sourceTree = "<group>"; };
 		5250F1352446C5D800E5B2AA /* AC Stalk Market.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "AC Stalk Market.entitlements"; sourceTree = "<group>"; };
 		5250F1362446C94800E5B2AA /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
-		5250F1392446CEF500E5B2AA /* DayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayModel.swift; sourceTree = "<group>"; };
+		5250F1392446CEF500E5B2AA /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +156,46 @@
 			path = "Web Tools";
 			sourceTree = "<group>";
 		};
+		5241A78F244D001A00218147 /* Sales */ = {
+			isa = PBXGroup;
+			children = (
+				5250F13124469B6A00E5B2AA /* PredictionPresenter.swift */,
+				5241A791244D002D00218147 /* StateViews.swift */,
+				5241A793244D004D00218147 /* TurnipUIEntry.swift */,
+				5241A79A244D00BF00218147 /* TurnipPriceNow.swift */,
+				5241A79C244D010100218147 /* BellIcon.swift */,
+			);
+			path = Sales;
+			sourceTree = "<group>";
+		};
+		5241A797244D008F00218147 /* Wrappers */ = {
+			isa = PBXGroup;
+			children = (
+				5241A795244D007100218147 /* FetchWrapper.swift */,
+				5241A798244D009E00218147 /* PredictionWrapper.swift */,
+			);
+			path = Wrappers;
+			sourceTree = "<group>";
+		};
+		5241A79E244D011500218147 /* Predictors */ = {
+			isa = PBXGroup;
+			children = (
+				5250F1392446CEF500E5B2AA /* Models.swift */,
+				5241A79F244D011A00218147 /* KurtBoyer */,
+				5241A7A0244D015800218147 /* StaticPredictor.swift */,
+			);
+			path = Predictors;
+			sourceTree = "<group>";
+		};
+		5241A79F244D011A00218147 /* KurtBoyer */ = {
+			isa = PBXGroup;
+			children = (
+				5208F02F2446E1680032FB76 /* StalkMarketWizard.swift */,
+				5208F0312448210A0032FB76 /* KBStalkNetwork.swift */,
+			);
+			path = KurtBoyer;
+			sourceTree = "<group>";
+		};
 		5250F0E52446958900E5B2AA = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +219,8 @@
 		5250F0F02446958900E5B2AA /* AC Stalk Market */ = {
 			isa = PBXGroup;
 			children = (
+				5241A780244CFCA000218147 /* Web Tools */,
+				5241A79E244D011500218147 /* Predictors */,
 				5241A77B244CFC6400218147 /* Functional */,
 				5250F1382446CDF400E5B2AA /* Web Hook */,
 				5250F1352446C5D800E5B2AA /* AC Stalk Market.entitlements */,
@@ -212,12 +268,13 @@
 		5250F124244695B400E5B2AA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5241A797244D008F00218147 /* Wrappers */,
+				5241A78F244D001A00218147 /* Sales */,
 				5250F125244695B400E5B2AA /* SwiftUIPreviews+PreviewData.swift */,
 				5250F126244695B400E5B2AA /* TurnipPriceCell.swift */,
 				5250F127244695B400E5B2AA /* PriceHistoryList.swift */,
 				5250F12D2446965E00E5B2AA /* TurnipPriceAdder.swift */,
 				5250F128244695B400E5B2AA /* ContentView.swift */,
-				5250F13124469B6A00E5B2AA /* ShouldSellView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -225,10 +282,6 @@
 		5250F1382446CDF400E5B2AA /* Web Hook */ = {
 			isa = PBXGroup;
 			children = (
-				5241A780244CFCA000218147 /* Web Tools */,
-				5250F1392446CEF500E5B2AA /* DayModel.swift */,
-				5208F02F2446E1680032FB76 /* StalkMarketWizard.swift */,
-				5208F0312448210A0032FB76 /* StalkNetwork.swift */,
 			);
 			path = "Web Hook";
 			sourceTree = "<group>";
@@ -364,10 +417,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5241A792244D002D00218147 /* StateViews.swift in Sources */,
 				5250F13424469D9F00E5B2AA /* TurnipPredictor.swift in Sources */,
-				5250F13A2446CEF500E5B2AA /* DayModel.swift in Sources */,
+				5250F13A2446CEF500E5B2AA /* Models.swift in Sources */,
 				5250F0F22446958A00E5B2AA /* AppDelegate.swift in Sources */,
+				5241A799244D009E00218147 /* PredictionWrapper.swift in Sources */,
 				5241A77D244CFC7500218147 /* FlatMap+FowardBind.swift in Sources */,
+				5241A79B244D00BF00218147 /* TurnipPriceNow.swift in Sources */,
 				5250F12A244695B400E5B2AA /* TurnipPriceCell.swift in Sources */,
 				5241A784244CFE2D00218147 /* StalkMarketPage.swift in Sources */,
 				5250F12C244695B400E5B2AA /* ContentView.swift in Sources */,
@@ -375,19 +431,23 @@
 				5250F129244695B400E5B2AA /* SwiftUIPreviews+PreviewData.swift in Sources */,
 				5241A78A244CFEB800218147 /* ACSWebViewMessenger.swift in Sources */,
 				5241A78E244CFF1C00218147 /* WKWebViewLoader.swift in Sources */,
+				5241A794244D004D00218147 /* TurnipUIEntry.swift in Sources */,
 				5208F0302446E1690032FB76 /* StalkMarketWizard.swift in Sources */,
 				5250F12B244695B400E5B2AA /* PriceHistoryList.swift in Sources */,
 				5250F1372446C94800E5B2AA /* CoreDataHelper.swift in Sources */,
 				5250F13024469A5900E5B2AA /* Price+Helpers.swift in Sources */,
-				5208F0322448210A0032FB76 /* StalkNetwork.swift in Sources */,
+				5241A7A1244D015800218147 /* StaticPredictor.swift in Sources */,
+				5208F0322448210A0032FB76 /* KBStalkNetwork.swift in Sources */,
 				5241A786244CFE5500218147 /* WKWebView+ACMarket.swift in Sources */,
+				5241A79D244D010100218147 /* BellIcon.swift in Sources */,
 				5241A77F244CFC9000218147 /* FunctionalBasics.swift in Sources */,
 				5241A788244CFE7400218147 /* StalkMarketRecommendationPage.swift in Sources */,
 				5250F0F72446958A00E5B2AA /* AC_Stalk_Market.xcdatamodeld in Sources */,
-				5250F13224469B6A00E5B2AA /* ShouldSellView.swift in Sources */,
+				5250F13224469B6A00E5B2AA /* PredictionPresenter.swift in Sources */,
 				5250F12E2446965E00E5B2AA /* TurnipPriceAdder.swift in Sources */,
 				5241A782244CFCB600218147 /* JavascriptExpression.swift in Sources */,
 				5250F0F42446958A00E5B2AA /* SceneDelegate.swift in Sources */,
+				5241A796244D007100218147 /* FetchWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

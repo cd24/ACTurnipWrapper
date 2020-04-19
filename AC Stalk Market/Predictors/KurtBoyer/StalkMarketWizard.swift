@@ -9,35 +9,19 @@
 import Foundation
 import Combine
 
-extension WeekModel {
-    func dayModel(for day: DayOfWeek) -> DayModel? {
-        switch day {
-        case .monday:
-            return self.monday
-        case .tuesday:
-            return self.tuesday
-        case .wednesday:
-            return self.wednesday
-        case .thursday:
-            return self.thursday
-        case .friday:
-            return self.friday
-        case .saturday:
-            return self.saturday
-        case .sunday:
-            return self.sunday
-        }
-    }
-}
-
 public protocol StalkMarketWizardNetworkInterface {
     func prediction(from week: WeekModel?) -> AnyPublisher<String, Error>
+}
+
+public protocol StalkMarketWizardParser {
+    func parse(from string: String) -> TurnipPrediction<Error>
 }
 
 public struct StalkMarketWizard: TurnipPredictor {
     public typealias Failure = Error
     
     public let network: StalkMarketWizardNetworkInterface
+    public let parser: StalkMarketWizardParser
     
     public func needsNewValue<S>(for prices: S) -> Bool where S : Sequence, S.Element : TurnipPriceEntry {
         let week = newestWeek(from: days(from: prices))
@@ -65,18 +49,10 @@ public struct StalkMarketWizard: TurnipPredictor {
         let work = weeks
             .normalizeError()
             .receive(on: RunLoop.main)
-            .flatMap { week in self.network.prediction(from: week).map { self.parse(content: $0) } }
+            .flatMap { week in self.network.prediction(from: week).map() { self.parser.parse(from: $0) } }
             .eraseToAnyPublisher()
         return processing.merge(with: work)
             .catch() { error in Just(TurnipPrediction<Error>.failed(error)) }
             .eraseToAnyPublisher()
-    }
-    
-    func parse(content: String) -> TurnipPrediction<Error> {
-        if content.lowercased().contains("sell") {
-            return .sell
-        } else {
-            return .hold
-        }
     }
 }

@@ -9,15 +9,27 @@
 import SwiftUI
 import Combine
 
+struct ContentLanding: View {
+    let prediction: TurnipPrediction<Error>
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            PredictionPresenter(prediction: prediction).padding()
+            PriceHistoryList()
+        }
+    }
+}
+
 struct ContentView: View {
+    @Environment(\.managedObjectContext) var context
     @State var text: String = ""
-    let wizard = StalkMarketWizard(network: StalkNetwork())
+    let wizard = StalkMarketWizard(network: KBStalkNetwork(), parser: KBNetworkParser())
     
     var body: some View {
         NavigationView {
-            FetchWrapper<PredictionWrapper<DetermineSaleView<StalkMarketWizard>, StalkMarketWizard>> { elements in
+            FetchWrapper { elements in
                 PredictionWrapper(prices: elements, predictor: self.wizard) { prediction in
-                    DetermineSaleView(prediction: prediction)
+                    ContentLanding(prediction: prediction).environment(\.managedObjectContext, self.context)
                 }
             }
             .environment(\.managedObjectContext, DataModel.shared.persistentContainer.viewContext)
