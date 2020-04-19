@@ -26,13 +26,13 @@ public struct WeekModel {
 
 public func days<S: Sequence>(from prices: S) -> [DayModel] where S.Element: TurnipPriceEntry {
     let v = Dictionary(grouping: prices, by: \.date.startOfDay).map { _, group in group.sorted { $0.price < $1.price } }
-    let p1 = v.map { group -> (morning: TurnipPriceEntry?, afternoon: TurnipPriceEntry?) in
-        let mn = group.filter { $0.date.timeOfDay == .morning }.first
-        let af = group.filter { $0.date.timeOfDay == .afternoon }.first
+    let p1 = v.lazy.map { group -> (morning: TurnipPriceEntry?, afternoon: TurnipPriceEntry?) in
+        let mn = group.lazy.filter { $0.date.timeOfDay == .morning }.first
+        let af = group.lazy.filter { $0.date.timeOfDay == .afternoon }.first
         return (morning: mn, afternoon: af)
     }
-    let snd = p1.map { (o: (morning: TurnipPriceEntry?, afternoon: TurnipPriceEntry?)) in (day: o.morning?.date, times: o) }
-    let values: [DayModel] = snd.compactMap { values in
+    let snd = p1.map { (o: (morning: TurnipPriceEntry?, afternoon: TurnipPriceEntry?)) in (day: o.morning?.date ?? o.afternoon?.date, times: o) }
+    let values: [DayModel] = snd.lazy.compactMap { values in
         guard let dow = values.day else {
             return nil
         }
@@ -48,7 +48,7 @@ extension Array where Element == DayModel {
 }
 
 public func newestWeek(from days: [DayModel]) -> WeekModel? {
-    guard let oneWeekAgo = Calendar.current.date(byAdding: .day, value: 7, to: Date())?.startOfDay else {
+    guard let oneWeekAgo = Calendar.current.date(byAdding: .day, value: -7, to: Date())?.startOfDay else {
         return nil
     }
     let releventDays = days.filter { $0.day > oneWeekAgo }.sorted { $0.day > $1.day }

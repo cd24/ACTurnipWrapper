@@ -31,11 +31,11 @@ extension WeekModel {
 }
 
 public protocol StalkMarketWizardNetworkInterface {
-    func prediction(from week: WeekModel?) -> AnyPublisher<String, Never>
+    func prediction(from week: WeekModel?) -> AnyPublisher<String, Error>
 }
 
 public struct StalkMarketWizard: TurnipPredictor {
-    public typealias Failure = Never
+    public typealias Failure = Error
     
     public let network: StalkMarketWizardNetworkInterface
     
@@ -52,15 +52,27 @@ public struct StalkMarketWizard: TurnipPredictor {
         }
     }
     
-    public func predict<S>(from prices: S) -> AnyPublisher<TurnipPrediction<Never>, Never> where S : Sequence, S.Element : TurnipPriceEntry {
-        let week = newestWeek(from: days(from: prices))
-        return self.network.prediction(from: week)
-            .replaceError(with: "")
-            .map(self.parse)
+    public func predict<S>(from prices: S) -> AnyPublisher<TurnipPrediction<Error>, Never> where S : Sequence, S.Element : TurnipPriceEntry {
+        let weeks: Future<WeekModel?, Never> = Future { promise in
+            DispatchQueue.global(qos: .userInitiated).async {
+                let week = newestWeek(from: days(from: prices))
+                promise(.success(week))
+            }
+        }
+        let processing = Future<TurnipPrediction<Error>, Error> { promise in
+            promise(.success(.processing))
+        }
+        let work = weeks
+            .normalizeError()
+            .receive(on: RunLoop.main)
+            .flatMap { week in self.network.prediction(from: week).map { self.parse(content: $0) } }
+            .eraseToAnyPublisher()
+        return processing.merge(with: work)
+            .catch() { error in Just(TurnipPrediction<Error>.failed(error)) }
             .eraseToAnyPublisher()
     }
     
-    func parse(content: String) -> TurnipPrediction<Never> {
+    func parse(content: String) -> TurnipPrediction<Error> {
         if content.lowercased().contains("sell") {
             return .sell
         } else {

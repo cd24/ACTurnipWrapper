@@ -28,35 +28,72 @@ public struct TurnipUIEntry: TurnipPriceEntry {
     }
 }
 
-public struct DetermineSaleView<P: TurnipPredictor>: View where P.Failure: UserPrintable {
-    @FetchRequest(sortDescriptors: [NSSortDescriptor(key: "date", ascending: false)])
+extension TurnipPrice {
+    static var sortedFetch: NSFetchRequest<TurnipPrice> {
+        let request: NSFetchRequest<TurnipPrice> = TurnipPrice.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
+        return request
+    }
+}
+
+public struct FetchWrapper<T: View>: View {
+    @Environment(\.managedObjectContext) var context
+    @FetchRequest(fetchRequest: TurnipPrice.sortedFetch)
     var elements: FetchedResults<TurnipPrice>
     
-    var predictor: P
+    var wrapped: (FetchedResults<TurnipPrice>) -> T
+    
+    public var body: some View {
+        wrapped(elements).environment(\.managedObjectContext, context)
+    }
+}
+
+public struct PredictionWrapper<T: View, P: TurnipPredictor>: View {
+    @Environment(\.managedObjectContext) var context
+    
+    let prices: FetchedResults<TurnipPrice>
+    let predictor: P
+    
+    @State var predictions: AnyPublisher<TurnipPrediction<P.Failure>, Never> = Empty().eraseToAnyPublisher()
     @State var prediction: TurnipPrediction<P.Failure> = .processing
     @State var popoverShowing: Bool = false
     
+    var wrapped: (TurnipPrediction<P.Failure>) -> T
+    
     public var body: some View {
-        VStack {
-            self.view(for: prediction).scaledToFit().padding()
-            PriceHistoryList()
-        }
-        .navigationBarItems(trailing: Button(action: { self.popoverShowing = true }) { Image(systemName: "plus").padding() })
-        .popover(isPresented: $popoverShowing) { TurnipPriceNow(showing: self.$popoverShowing) }
-        .onReceive(self.predictor.predict(from: elements.lazy.map(TurnipUIEntry.init))) { prediction in
-            self.prediction = prediction
-        }
-        .onAppear() {
-            self.popoverShowing = self.predictor.needsNewValue(for: self.elements.lazy.map(TurnipUIEntry.init))
-        }
+        wrapped(prediction)
+            .environment(\.managedObjectContext, context)
+            .onReceive(predictions) { self.prediction = $0 }
+            .onAppear() {
+                self.popoverShowing = self.predictor.needsNewValue(for: self.turnipUIEntries())
+                self.predictions = self.predictor.predict(from: self.turnipUIEntries())
+            }
+            .popover(isPresented: $popoverShowing) {
+                TurnipPriceNow(showing: self.$popoverShowing)
+                    .environment(\.managedObjectContext, self.context)
+            }
+            .navigationBarItems(trailing: Button(action: { self.popoverShowing = true }) { Image(systemName: "plus").padding() })
     }
     
-    func view(for prediction: TurnipPrediction<P.Failure>) -> some View {
-        switch prediction {
-        case .sell:
-            return AnyView(ShouldSellView())
-        default:
-            return AnyView(ShouldHoldView())
+    func turnipUIEntries() -> [TurnipUIEntry] {
+        return self.prices.lazy.map(TurnipUIEntry.init)
+    }
+}
+
+public struct DetermineSaleView<P: TurnipPredictor>: View {
+    @Environment(\.managedObjectContext) var context
+    var prediction: TurnipPrediction<P.Failure> = .processing
+    
+    public var body: some View {
+        VStack {
+            if prediction.shouldSell() {
+                ShouldSellView()
+            } else if prediction.shouldHold() {
+                ShouldHoldView()
+            } else if prediction.processing() {
+                ProcessingView()
+            }
+            PriceHistoryList().environment(\.managedObjectContext, context)
         }
     }
 }
@@ -93,10 +130,10 @@ public struct TurnipPriceNow: View {
         guard let price = Int64(text) else {
             return
         }
-        let turnip = TurnipPrice(entity: TurnipPrice.entity(), insertInto: DataModel.shared.persistentContainer.viewContext)
+        let turnip = TurnipPrice(context: context)
         turnip.date = Date()
         turnip.price = price
-        DataModel.shared.saveContext()
+        try! context.save()
         self.showing.wrappedValue = false
     }
     
@@ -132,6 +169,13 @@ struct ShouldHoldView: View {
     }
 }
 
+struct ProcessingView: View {
+    var body: some View {
+        Text("Processing... I'm thinking about your options!")
+            .navigationBarTitle("Processing...")
+    }
+}
+
 extension Never: UserPrintable {
     public func userString() -> String {
         return "Something is really wrong."
@@ -149,9 +193,7 @@ public struct StaticPredictor<Failure: Error>: TurnipPredictor {
 struct DetermineSaleView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            DetermineSaleView(predictor: StaticPredictor<Never>(value: .processing))
-            DetermineSaleView(predictor: StaticPredictor<Never>(value: .hold))
-            DetermineSaleView(predictor: StaticPredictor<Never>(value: .sell))
+            Text("TODO")
         }
     }
 }

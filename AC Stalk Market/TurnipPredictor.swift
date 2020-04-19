@@ -14,6 +14,33 @@ public enum TurnipPrediction<F: Error> {
     case hold
     case processing
     case failed(F)
+    
+    func shouldSell() -> Bool {
+        switch self {
+        case .sell:
+            return true
+        default:
+            return false
+        }
+    }
+    
+    func shouldHold() -> Bool {
+        switch self {
+        case .hold:
+            return true
+        default:
+            return false
+        }
+    }
+    
+    func processing() -> Bool {
+        switch self {
+        case .processing:
+            return true
+        default:
+            return false
+        }
+    }
 }
 
 public protocol UserPrintable {

@@ -8,15 +8,42 @@
 
 import Foundation
 import SwiftUI
+import CoreData
 
 public struct PriceHistoryList: View {
+    @Environment(\.managedObjectContext) var context: NSManagedObjectContext
     @FetchRequest(entity: TurnipPrice.entity(),
                   sortDescriptors: [NSSortDescriptor(key: "date", ascending: false)])
     var entries: FetchedResults<TurnipPrice>
     
     public var body: some View {
-        List(entries.filter { $0.date?.dayOfWeek != .sunday }, id: \.date) { price in
-            TurnipPriceCell(price: price)
+        printAll()
+        return List() {
+            ForEach(entries.filter { $0.date?.dayOfWeek != .sunday }, id: \.date) { price in
+                TurnipPriceCell(price: price)
+            }.onDelete { indexes in
+                withAnimation() { self.delete(indexes: indexes) }
+            }
         }
+    }
+    
+    func delete(indexes: IndexSet) {
+        for index in indexes {
+            let element = self.entries[index]
+            self.context.delete(element)
+        }
+    }
+    
+    func printAll() {
+        let elements = try! context.fetch(TurnipPrice.sortedFetch)
+        for element in elements {
+            print(element)
+        }
+    }
+}
+
+struct PriceHistoryList_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }

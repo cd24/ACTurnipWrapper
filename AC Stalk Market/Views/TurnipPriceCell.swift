@@ -12,6 +12,13 @@ import SwiftUI
 public struct TurnipPriceCell: View {
     public let price: TurnipPrice
     
+    public var formatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .full
+        formatter.timeStyle = .short
+        return formatter
+    }
+    
     public var body: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -27,11 +34,11 @@ public struct TurnipPriceCell: View {
     }
     
     func turnipPriceDescription() -> String {
-        return "\(self.price.price)"
+        return "\(self.price.price) Bells"
     }
     
     func dateDescription() -> String {
-        return "\(self.price.date!)"
+        return self.formatter.string(from: self.price.date!)
     }
 }
 

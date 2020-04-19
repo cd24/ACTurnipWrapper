@@ -67,7 +67,13 @@ public struct TurnipPriceAdder: View {
 
 struct TurnipPriceAdder_Previews: PreviewProvider {
     static var previews: some View {
-        let price = self.synthesize(entry: (Date(), 123))
-        return TurnipPriceCell(price: price)
+        Group {
+            TurnipPriceCell(price: self.synthesize(entry: (Date(), 123)))
+                .padding()
+                .previewLayout(PreviewLayout.fixed(width: 300, height: 70))
+            TurnipPriceAdder()
+                .environment(\.managedObjectContext, DataModel.shared.persistentContainer.viewContext)
+                .padding()
+        }
     }
 }

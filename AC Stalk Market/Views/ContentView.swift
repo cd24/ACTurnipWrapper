@@ -10,29 +10,18 @@ import SwiftUI
 import Combine
 
 struct ContentView: View {
-    let network = StalkNetwork()
-    
-    @State var reciever: AnyPublisher<String, Never> = Empty().eraseToAnyPublisher()
     @State var text: String = ""
+    let wizard = StalkMarketWizard(network: StalkNetwork())
     
     var body: some View {
         NavigationView {
-            DetermineSaleView(predictor: StalkMarketWizard(network: StalkNetwork()))
+            FetchWrapper<PredictionWrapper<DetermineSaleView<StalkMarketWizard>, StalkMarketWizard>> { elements in
+                PredictionWrapper(prices: elements, predictor: self.wizard) { prediction in
+                    DetermineSaleView(prediction: prediction)
+                }
+            }
+            .environment(\.managedObjectContext, DataModel.shared.persistentContainer.viewContext)
         }
-//        VStack {
-//            SUIWebView(webView: network.web)
-//                .onReceive(self.reciever) { value in
-//                    print(value)
-//            }
-//            Button(action: self.rerun) { Text("rerun") }
-//        }.onAppear() {
-//            self.rerun()
-//        }
-    }
-    
-    func rerun() {
-        let sampleWeek = WeekModel(monday: DayModel(day: Date(), morning: 2, afternoon: 3), tuesday: DayModel(day: Date(), morning: 100, afternoon: nil), wednesday: nil, thursday: nil, friday: nil, saturday: nil, sunday: nil)
-        self.reciever = self.network.prediction(from: sampleWeek)
     }
 }
 
