@@ -39,7 +39,7 @@ public class DayModelSpec: QuickSpec {
             it("returns multiple days") {
                 let oneMorningLater = TurnipUIEntry(price: 40, date: morningEntry.date + .days(1))
                 let oneAfternoonLater = TurnipUIEntry(price: 582, date: afternoonEntry.date + .days(1))
-                let models = days(from: [morningEntry, afternoonEntry, oneMorningLater, oneAfternoonLater])
+                let models = days(from: [morningEntry, afternoonEntry, oneMorningLater, oneAfternoonLater]).sorted { $0.day < $1.day }
                 let answers = [
                     DayModel(day: morningEntry.date, morning: 20, afternoon: 30),
                     DayModel(day: oneMorningLater.date, morning: 40, afternoon: 582)
