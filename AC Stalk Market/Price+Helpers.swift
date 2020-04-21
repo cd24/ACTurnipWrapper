@@ -47,6 +47,16 @@ extension Date {
         return Calendar.current.startOfDay(for: self)
     }
     
+    var afternoon: Date {
+        return Calendar.current.date(byAdding: .hour, value: 13, to: self.startOfDay)!
+    }
+    
+    var startOfWeek: Date? {
+        let calendar = Calendar.current
+        guard let monday = calendar.date(from: calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)) else { return nil }
+        return monday
+    }
+    
     func daysFrom(other: Date) -> Int {
         let calendar = NSCalendar.current
         let d1 = calendar.startOfDay(for: self)
@@ -59,4 +69,96 @@ extension Date {
     func before(other: Date) -> Bool {
         return self < other
     }
+}
+
+enum CalendarValue {
+    case year(Int)
+    case yearForWeekOfYear(Int)
+    case weekOfYear(Int)
+    case month(Int)
+    case dayOfMonth(Int)
+    case days(Int)
+    case hours(Int)
+    case minutes(Int)
+    case seconds(Int)
+    
+    func calendarComponent() -> Calendar.Component {
+        switch self {
+        case .year(_):
+            return .year
+        case .yearForWeekOfYear(_):
+            return .yearForWeekOfYear
+        case .month(_):
+            return .month
+        case .dayOfMonth(_):
+            return .day
+        case .weekOfYear(_):
+            return .weekOfYear
+        case .days(_):
+            return .day
+        case .hours(_):
+            return .hour
+        case .minutes(_):
+            return .minute
+        case .seconds(_):
+            return .second
+        }
+    }
+    
+    func value() -> Int {
+        switch self {
+        case .year(let value):
+            return value
+        case .yearForWeekOfYear(let value):
+            return value
+        case .dayOfMonth(let value):
+            return value
+        case .weekOfYear(let value):
+            return value
+        case .month(let value):
+            return value
+        case .days(let value):
+            return value
+        case .hours(let value):
+            return value
+        case .minutes(let value):
+            return value
+        case .seconds(let value):
+            return value
+        }
+    }
+    
+    func assignTo(_ components: DateComponents) -> DateComponents {
+        var mutable = components
+        switch self {
+        case .year(let value):
+            mutable.year = value
+        case .yearForWeekOfYear(let value):
+            mutable.yearForWeekOfYear = value
+        case .dayOfMonth(let value):
+            mutable.day = value
+        case .weekOfYear(let value):
+            mutable.weekOfYear = value
+        case .month(let value):
+            mutable.month = value
+        case .days(let value):
+            mutable.day = value
+        case .hours(let value):
+            mutable.hour = value
+        case .minutes(let value):
+            mutable.minute = value
+        case .seconds(let value):
+            mutable.second = value
+        }
+        return mutable
+    }
+}
+
+func +(lhs: Date, rhs: CalendarValue) -> Date {
+    return Calendar.current.date(byAdding: rhs.calendarComponent(), value: rhs.value(), to: lhs)!
+}
+
+func date(from: [CalendarValue]) -> Date? {
+    let components = from.reduce(DateComponents()) { components, value in value.assignTo(components) }
+    return Calendar.current.date(from: components)
 }

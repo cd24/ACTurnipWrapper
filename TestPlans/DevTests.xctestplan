@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "91719B37-2409-4A7B-93C7-68F37533844D",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:AC Stalk Market.xcodeproj",
+        "identifier" : "5250F1062446958D00E5B2AA",
+        "name" : "AC Stalk MarketTests"
+      }
+    }
+  ],
+  "version" : 1
+}

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -43,6 +43,9 @@
 		5250F13424469D9F00E5B2AA /* TurnipPredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250F13324469D9F00E5B2AA /* TurnipPredictor.swift */; };
 		5250F1372446C94800E5B2AA /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250F1362446C94800E5B2AA /* CoreDataHelper.swift */; };
 		5250F13A2446CEF500E5B2AA /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250F1392446CEF500E5B2AA /* Models.swift */; };
+		5267A1CB244E96A500AA3851 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 5267A1CA244E96A500AA3851 /* Quick */; };
+		5267A1CD244E96D100AA3851 /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5267A1CC244E96D100AA3851 /* ModelTests.swift */; };
+		5267A1D0244E972900AA3851 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 5267A1CF244E972900AA3851 /* Nimble */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,8 @@
 /* Begin PBXFileReference section */
 		5208F02F2446E1680032FB76 /* StalkMarketWizard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StalkMarketWizard.swift; sourceTree = "<group>"; };
 		5208F0312448210A0032FB76 /* KBStalkNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBStalkNetwork.swift; sourceTree = "<group>"; };
+		523EADAA244E9D3E00F0F3AA /* DevTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = DevTests.xctestplan; sourceTree = "<group>"; };
+		523EADAB244E9D5500F0F3AA /* All.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = All.xctestplan; sourceTree = "<group>"; };
 		5241A77C244CFC7500218147 /* FlatMap+FowardBind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlatMap+FowardBind.swift"; sourceTree = "<group>"; };
 		5241A77E244CFC9000218147 /* FunctionalBasics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalBasics.swift; sourceTree = "<group>"; };
 		5241A781244CFCB600218147 /* JavascriptExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavascriptExpression.swift; sourceTree = "<group>"; };
@@ -106,6 +111,7 @@
 		5250F1352446C5D800E5B2AA /* AC Stalk Market.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "AC Stalk Market.entitlements"; sourceTree = "<group>"; };
 		5250F1362446C94800E5B2AA /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		5250F1392446CEF500E5B2AA /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		5267A1CC244E96D100AA3851 /* ModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +126,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5267A1CB244E96A500AA3851 /* Quick in Frameworks */,
+				5267A1D0244E972900AA3851 /* Nimble in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +141,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		523EADA9244E9D2A00F0F3AA /* TestPlans */ = {
+			isa = PBXGroup;
+			children = (
+				523EADAA244E9D3E00F0F3AA /* DevTests.xctestplan */,
+				523EADAB244E9D5500F0F3AA /* All.xctestplan */,
+			);
+			path = TestPlans;
+			sourceTree = "<group>";
+		};
 		5241A77B244CFC6400218147 /* Functional */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +216,7 @@
 		5250F0E52446958900E5B2AA = {
 			isa = PBXGroup;
 			children = (
+				523EADA9244E9D2A00F0F3AA /* TestPlans */,
 				5250F0F02446958900E5B2AA /* AC Stalk Market */,
 				5250F10A2446958D00E5B2AA /* AC Stalk MarketTests */,
 				5250F1152446958D00E5B2AA /* AC Stalk MarketUITests */,
@@ -252,6 +270,7 @@
 			children = (
 				5250F10B2446958D00E5B2AA /* AC_Stalk_MarketTests.swift */,
 				5250F10D2446958D00E5B2AA /* Info.plist */,
+				5267A1CC244E96D100AA3851 /* ModelTests.swift */,
 			);
 			path = "AC Stalk MarketTests";
 			sourceTree = "<group>";
@@ -320,6 +339,10 @@
 				5250F1092446958D00E5B2AA /* PBXTargetDependency */,
 			);
 			name = "AC Stalk MarketTests";
+			packageProductDependencies = (
+				5267A1CA244E96A500AA3851 /* Quick */,
+				5267A1CF244E972900AA3851 /* Nimble */,
+			);
 			productName = "AC Stalk MarketTests";
 			productReference = 5250F1072446958D00E5B2AA /* AC Stalk MarketTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -374,6 +397,10 @@
 				Base,
 			);
 			mainGroup = 5250F0E52446958900E5B2AA;
+			packageReferences = (
+				5267A1C9244E96A500AA3851 /* XCRemoteSwiftPackageReference "Quick" */,
+				5267A1CE244E972900AA3851 /* XCRemoteSwiftPackageReference "Nimble" */,
+			);
 			productRefGroup = 5250F0EF2446958900E5B2AA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -456,6 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5250F10C2446958D00E5B2AA /* AC_Stalk_MarketTests.swift in Sources */,
+				5267A1CD244E96D100AA3851 /* ModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -774,6 +802,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5267A1C9244E96A500AA3851 /* XCRemoteSwiftPackageReference "Quick" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Quick.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.0;
+			};
+		};
+		5267A1CE244E972900AA3851 /* XCRemoteSwiftPackageReference "Nimble" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Nimble.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5267A1CA244E96A500AA3851 /* Quick */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5267A1C9244E96A500AA3851 /* XCRemoteSwiftPackageReference "Quick" */;
+			productName = Quick;
+		};
+		5267A1CF244E972900AA3851 /* Nimble */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5267A1CE244E972900AA3851 /* XCRemoteSwiftPackageReference "Nimble" */;
+			productName = Nimble;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		5250F0F52446958A00E5B2AA /* AC_Stalk_Market.xcdatamodeld */ = {
