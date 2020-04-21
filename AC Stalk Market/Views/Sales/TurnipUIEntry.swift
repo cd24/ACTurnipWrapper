@@ -13,6 +13,11 @@ public struct TurnipUIEntry: TurnipPriceEntry {
     public let price: Int
     public let date: Date
     
+    init(price: Int, date: Date) {
+        self.price = price
+        self.date = date
+    }
+    
     init(from: TurnipPrice) {
         self.price = Int(from.price)
         self.date = from.date ?? Date()
