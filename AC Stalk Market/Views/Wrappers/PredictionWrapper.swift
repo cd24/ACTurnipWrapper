@@ -26,7 +26,7 @@ public struct PredictionWrapper<T: View, P: TurnipPredictor>: View {
     public var body: some View {
         wrapped(prediction)
             .environment(\.managedObjectContext, context)
-            .onReceive(predictions) { self.prediction = $0 }
+            .onReceive(predictions) { prediction in withAnimation { self.prediction = prediction } } 
             .onAppear() {
                 self.popoverShowing = self.predictor.needsNewValue(for: self.turnipUIEntries())
                 self.predictions = self.predictor.predict(from: self.turnipUIEntries())

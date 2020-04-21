@@ -11,22 +11,15 @@ import SwiftUI
 
 struct ShouldSellView: View {
     var body: some View {
-        ZStack {
-            VStack {
-                BellIcon().scaledToFit()
-                Text("You should sell right now!")
-            }
-        }.navigationBarTitle("Sell your turnips!")
+        Text("You should sell right now!")
+            .navigationBarTitle("Sell your turnips!")
     }
 }
 
 struct ShouldHoldView: View {
     var body: some View {
-        ZStack {
-            VStack {
-                Text("You should hold right now")
-            }
-        }.navigationBarTitle("Hold your turnips!")
+        Text("You should hold right now")
+            .navigationBarTitle("Hold your turnips!")
     }
 }
 
