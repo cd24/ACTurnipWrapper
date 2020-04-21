@@ -8,13 +8,13 @@
 
 import Foundation
 
-public struct DayModel {
+public struct DayModel: Equatable {
     public let day: Date
     public let morning: Int?
     public let afternoon: Int?
 }
 
-public struct WeekModel {
+public struct WeekModel: Equatable {
     public let monday: DayModel?
     public let tuesday: DayModel?
     public let wednesday: DayModel?
@@ -48,7 +48,7 @@ extension Array where Element == DayModel {
 }
 
 public func newestWeek(from days: [DayModel]) -> WeekModel? {
-    guard let oneWeekAgo = Calendar.current.date(byAdding: .day, value: -7, to: Date())?.startOfDay else {
+    guard let oneWeekAgo = Date().startOfWeek else {
         return nil
     }
     let releventDays = days.filter { $0.day > oneWeekAgo }.sorted { $0.day > $1.day }

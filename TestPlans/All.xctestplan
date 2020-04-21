@@ -1,0 +1,33 @@
+{
+  "configurations" : [
+    {
+      "id" : "A43E8B37-E8A6-4F03-A10C-6EBCBA6B4F45",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:AC Stalk Market.xcodeproj",
+        "identifier" : "5250F1062446958D00E5B2AA",
+        "name" : "AC Stalk MarketTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:AC Stalk Market.xcodeproj",
+        "identifier" : "5250F1112446958D00E5B2AA",
+        "name" : "AC Stalk MarketUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
